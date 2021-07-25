@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0040)https://ejudge.lksh.ru/Bprime/rules.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Мы будем писать правильно!</title>
+<style type="text/css">
+h3 { text-indent : 2em;
+color : #003;
+margin : 0px;
+}
+
+h2 { color : #900;
+font-family : Arial;
+font-weight : normal;
+padding : 10px 0px;
+margin : 0px;
+}
+
+ul { font-size : 12pt;
+font-family : "Timew New Roman";
+}
+</style><style type="text/css"></style></head>
+
+<body>
+<h2>Рекомендуемые правила форматирования кода:</h2>
+<ul type="">
+<li> Отступ <b>два или четыре</b> пробела; табуляции <b>запрещены</b>;
+</li><li> Вокруг знаков арифметических операций ставятся <b>пробелы</b>;
+</li><li> Вокруг присваиваний ставятся <b>пробелы</b>;
+</li><li> Процедуры, функции и другие смысловые блоки разделяются <b>пустыми строками</b>;
+</li><li> После запятой и двоеточия ставится <b>пробел</b>;
+</li><li> Между именем функции и скобками пробел <b>не ставится</b>, с внутренней стороны скобок пробел <b>не ставится</b>.
+</li><li> Ширина текста программы (то есть количество символов в одной строке кода) не должна превышать <b>80-100 символов</b>; 
+</li><li> В операторах if, while, do-while, for тело цикла заключается в <b>фигурные скобки (составной оператор)</b>, даже если тело — единственный оператор;
+</li><li> Каждый новый оператор должен находиться в <b>отдельной строке</b>.
+</li><li> Идентификаторы должны иметь длинные (но в меру), осмысленные названия. Исключения допускаются только для счетчиков
+в циклах (i, j), а также для размеров исходных данных (N, M).
+</li><li> В идентификаторах используются только английские слова, транслитерация не допускается.
+</li></ul>
+<h2>Примеры правильно отформатированных программ:</h2>
+
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+<tbody><tr>
+<td width="50%"><h3>Паскаль:</h3></td>
+<td><h3>Си:</h3></td>
+</tr>
+<tr>
+<td valign="top"><div><pre style="border: 1px solid rgb(216, 223, 234); padding: 3px; overflow: auto; margin-right: 0px; background-color: rgb(247, 246, 247);"><span style="font-weight: bold;">program</span> sum;<br><br><span style="font-weight: bold;">function</span> sum(a, b: longint): longint;<br><span style="font-weight: bold;">begin</span><br>  sum := a + b;<br><span style="font-weight: bold;">end</span>;<br><br><span style="font-weight: bold;">var</span><br>  a, b, s: longint;<br><br><span style="font-weight: bold;">begin</span><br>  assign(input, <span style="color: blue;">'aplusb.in'</span>);<br>  reset(input);<br>  assign(output, <span style="color: blue;">'aplusb.out'</span>);<br>  rewrite(output);<br><br>  read(a, b);<br><br>  s := <span style="color: rgb(51, 153, 51);">0</span>;<br>  <span style="font-weight: bold;">if</span> (a &lt; <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">then</span> <span style="font-weight: bold;">begin</span><br>    a := -a;<br>    <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">then</span> <span style="font-weight: bold;">begin</span><br>      b := -b;<br>      s := a + b;<br>    <span style="font-weight: bold;">end</span> <span style="font-weight: bold;">else</span> <span style="font-weight: bold;">begin</span><br>      <span style="font-weight: bold;">while</span> (s &lt;= <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">do</span> <span style="font-weight: bold;">begin</span><br>        <span style="font-weight: bold;">case</span> a <span style="font-weight: bold;">of</span><br>          <span style="color: rgb(51, 153, 51);">1</span>: <span style="font-weight: bold;">begin</span><br>            s := s + <span style="color: rgb(51, 153, 51);">3</span>;<br>          <span style="font-weight: bold;">end</span>;<br>          <span style="color: rgb(51, 153, 51);">2</span>: <span style="font-weight: bold;">begin</span><br>            s := s - <span style="color: rgb(51, 153, 51);">4</span>;<br>            a := a - <span style="color: rgb(51, 153, 51);">1</span>;<br>          <span style="font-weight: bold;">end</span>;<br>          <span style="font-weight: bold;">else</span><br>            s := <span style="color: rgb(51, 153, 51);">1</span>;<br>        <span style="font-weight: bold;">end</span>;<br>      <span style="font-weight: bold;">end</span>;<br>    <span style="font-weight: bold;">end</span>;<br>  <span style="font-weight: bold;">end</span> <span style="font-weight: bold;">else</span> <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">then</span> <span style="font-weight: bold;">begin</span><br>    b := -b;<br>    s := (a + b) * (a - b);<br>  <span style="font-weight: bold;">end</span> <span style="font-weight: bold;">else</span> <span style="font-weight: bold;">begin</span><br>    s := sum(a, b) * sum(a, b);<br>  <span style="font-weight: bold;">end</span>;<br>   <br>  writeln(s);<br><br>  close(input);<br>  close(output);<br><span style="font-weight: bold;">end</span>.</pre></div>
+</td>
+<td valign="top"><div><pre style="border: 1px solid rgb(216, 223, 234); padding: 3px; overflow: auto; margin-right: 0px; background-color: rgb(247, 246, 247);">#include &lt;stdio.h&gt;<br><br><span style="font-weight: bold;">int</span> sum(<span style="font-weight: bold;">int</span> a, <span style="font-weight: bold;">int</span> b) {<br>  return a + b;<br>}<br><br><span style="font-weight: bold;">int</span> main(<span style="font-weight: bold;">int</span> argc, <span style="font-weight: bold;">int</span>** argv) {<br>  <span style="font-weight: bold;">int</span> a;<br>  <span style="font-weight: bold;">int</span> b;<br>  <span style="font-weight: bold;">int</span> s;<br><br>  freopen(<span style="color: blue;">"aplusb.in"</span>, <span style="color: blue;">"r"</span>, stdin);<br>  freopen(<span style="color: blue;">"aplusb.out"</span>, <span style="color: blue;">"w"</span>, stdout);<br><br>  scanf(<span style="color: blue;">"%d%d"</span>, &amp;a, &amp;b);<br><br>  s = <span style="color: rgb(51, 153, 51);">0</span>;<br>  <span style="font-weight: bold;">if</span> (a &lt; <span style="color: rgb(51, 153, 51);">0</span>) {<br>    a = -a;<br>    <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>) {<br>      b = -b;<br>      s = a + b;<br>    } <span style="font-weight: bold;">else</span> {<br>      <span style="font-weight: bold;">while</span> (s &lt;= <span style="color: rgb(51, 153, 51);">0</span>) {<br>        <span style="font-weight: bold;">switch</span> (a) {<br>        <span style="font-weight: bold;">case</span> <span style="color: rgb(51, 153, 51);">1</span>: <br>          s = s + <span style="color: rgb(51, 153, 51);">3</span>;<br>          <span style="font-weight: bold;">break</span>;<br>        <span style="font-weight: bold;">case</span> <span style="color: rgb(51, 153, 51);">2</span>:<br>          s = s - <span style="color: rgb(51, 153, 51);">4</span>;<br>          a = a - <span style="color: rgb(51, 153, 51);">1</span>;<br>          <span style="font-weight: bold;">break</span>;<br>        <span style="font-weight: bold;">default</span>:<br>          s = <span style="color: rgb(51, 153, 51);">1</span>;<br>        }<br>      }<br>    }<br>  } <span style="font-weight: bold;">else</span> <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>) {<br>    b = -b;<br>    s = (a + b) * (a - b);<br>  } <span style="font-weight: bold;">else</span> {<br>    s = sum(a, b) * sum(a, b);<br>  }<br><br>  printf(<span style="color: blue;">"%d\n"</span>, s);<br><br>  fclose(stdin);<br>  fclose(stdout);<br>}</pre></div>
+</td>
+</tr>
+<tr>
+<td>
+<h2>Или так:</h2>
+</td>
+</tr>
+<tr>
+<td width="50%"><h3>Паскаль:</h3></td>
+<td><h3>Си:</h3></td>
+</tr>
+<tr>
+<td valign="top"><div><pre style="border: 1px solid rgb(216, 223, 234); padding: 3px; overflow: auto; margin-right: 0px; background-color: rgb(247, 246, 247);"><span style="font-weight: bold;">program</span> sum;<br><br><span style="font-weight: bold;">function</span> sum(a, b: longint): longint;<br><span style="font-weight: bold;">begin</span><br>  sum := a + b;<br><span style="font-weight: bold;">end</span>;<br><br><span style="font-weight: bold;">var</span><br>  a, b, s: longint;<br><br><span style="font-weight: bold;">begin</span><br>  assign(input, <span style="color: blue;">'aplusb.in'</span>);<br>  reset(input);<br>  assign(output, <span style="color: blue;">'aplusb.out'</span>);<br>  rewrite(output);<br><br>  read(a, b);<br><br>  s := <span style="color: rgb(51, 153, 51);">0</span>;<br>  <span style="font-weight: bold;">if</span> (a &lt; <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">then</span><br><span style="font-weight: bold;">  begin</span><br>    a := -a;<br>    <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">then</span><br><span style="font-weight: bold;">    begin</span><br>      b := -b;<br>      s := a + b;<br>    <span style="font-weight: bold;">end</span><br><span style="font-weight: bold;">    else</span><br><span style="font-weight: bold;">    begin</span><br>      <span style="font-weight: bold;">while</span> (s &lt;= <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">do</span><br><span style="font-weight: bold;">      begin</span><br>        <span style="font-weight: bold;">case</span> a <span style="font-weight: bold;">of</span><br>          <span style="color: rgb(51, 153, 51);">1</span>: <span style="font-weight: bold;">begin</span><br>            s := s + <span style="color: rgb(51, 153, 51);">3</span>;<br>          <span style="font-weight: bold;">  end</span>;<br>          <span style="color: rgb(51, 153, 51);">2</span>: <span style="font-weight: bold;">begin</span><br>            s := s - <span style="color: rgb(51, 153, 51);">4</span>;<br>            a := a - <span style="color: rgb(51, 153, 51);">1</span>;<br>          <span style="font-weight: bold;">  end</span>;<br>          <span style="font-weight: bold;">else</span><br>            s := <span style="color: rgb(51, 153, 51);">1</span>;<br>        <span style="font-weight: bold;">end</span>;<br>    <span style="font-weight: bold;">  end</span>;<br>    <span style="font-weight: bold;">end</span>;<br>  <span style="font-weight: bold;">end</span><br>  <span style="font-weight: bold;">else</span><br>  <span style="font-weight: bold;">begin</span><br>    <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>) <span style="font-weight: bold;">then</span><br>    <span style="font-weight: bold;">begin</span><br>      b := -b;<br>      s := (a + b) * (a - b);<br>  <span style="font-weight: bold;">  end</span><br>    <span style="font-weight: bold;">else</span><br>    <span style="font-weight: bold;">begin</span><br>      s := sum(a, b) * sum(a, b);<br>    <span style="font-weight: bold;">end</span>;<br>  <span style="font-weight: bold;">end</span>;<br>   <br>  writeln(s);<br><br>  close(input);<br>  close(output);<br><span style="font-weight: bold;">end</span>.</pre></div>
+</td>
+<td valign="top"><div><pre style="border: 1px solid rgb(216, 223, 234); padding: 3px; overflow: auto; margin-right: 0px; background-color: rgb(247, 246, 247);">#include &lt;stdio.h&gt;<br><br><span style="font-weight: bold;">int</span> sum(<span style="font-weight: bold;">int</span> a, <span style="font-weight: bold;">int</span> b)<br>{<br>  return a + b;<br>}<br><br><span style="font-weight: bold;">int</span> main(<span style="font-weight: bold;">int</span> argc, <span style="font-weight: bold;">int</span>** argv)<br>{<br>  <span style="font-weight: bold;">int</span> a;<br>  <span style="font-weight: bold;">int</span> b;<br>  <span style="font-weight: bold;">int</span> s;<br><br>  freopen(<span style="color: blue;">"aplusb.in"</span>, <span style="color: blue;">"r"</span>, stdin);<br>  freopen(<span style="color: blue;">"aplusb.out"</span>, <span style="color: blue;">"w"</span>, stdout);<br><br>  scanf(<span style="color: blue;">"%d%d"</span>, &amp;a, &amp;b);<br><br>  s = <span style="color: rgb(51, 153, 51);">0</span>;<br>  <span style="font-weight: bold;">if</span> (a &lt; <span style="color: rgb(51, 153, 51);">0</span>)<br>  {<br>    a = -a;<br>    <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>)<br>    {<br>      b = -b;<br>      s = a + b;<br>    }<br>    <span style="font-weight: bold;">else</span><br>    {<br>      <span style="font-weight: bold;">while</span> (s &lt;= <span style="color: rgb(51, 153, 51);">0</span>)<br>      {<br>        <span style="font-weight: bold;">switch</span> (a)<br>        {<br>        <span style="font-weight: bold;">case</span> <span style="color: rgb(51, 153, 51);">1</span>: <br>          s = s + <span style="color: rgb(51, 153, 51);">3</span>;<br>          <span style="font-weight: bold;">break</span>;<br>        <span style="font-weight: bold;">case</span> <span style="color: rgb(51, 153, 51);">2</span>:<br>          s = s - <span style="color: rgb(51, 153, 51);">4</span>;<br>          a = a - <span style="color: rgb(51, 153, 51);">1</span>;<br>          <span style="font-weight: bold;">break</span>;<br>        <span style="font-weight: bold;">default</span>:<br>          s = <span style="color: rgb(51, 153, 51);">1</span>;<br>        }<br>      }<br>    }<br>  }<br>  <span style="font-weight: bold;">else</span><br>  {<br>    <span style="font-weight: bold;">if</span> (b &lt; <span style="color: rgb(51, 153, 51);">0</span>)<br>    {<br>      b = -b;<br>      s = (a + b) * (a - b);<br>    }<br>    <span style="font-weight: bold;">else</span><br>    {<br>      s = sum(a, b) * sum(a, b);<br>    }<br>  }<br><br>  printf(<span style="color: blue;">"%d\n"</span>, s);<br><br>  fclose(stdin);<br>  fclose(stdout);<br>}</pre></div>
+</td>
+</tr>
+<!-- </tr><tr>
+
+<td valign=top><div>[code delphi]program sum;
+
+function sum(a, b: longint): longint;
+begin
+sum := a + b;
+Пend;
+
+var
+a, b, s: longint;
+
+begin
+assign(input, 'aplusb.in');
+reset(input);
+assign(output, 'aplusb.out');
+rewrite(output);
+
+read(a, b);
+
+s := 0;
+if (a &lt; 0) then begin
+a := -a;
+if (b &lt; 0) then begin
+b := -b;
+s := a + b;
+end else begin
+while (s &lt;= 0) do begin
+case a of
+1: begin
+s := s + 3;
+end;
+2: begin
+s := s - 4;
+a := a - 1;
+end;
+else
+s := 1;
+end;
+end;
+end;
+end else if (b &lt; 0) then begin
+b := -b;
+s := (a + b) * (a - b);
+end else begin
+s := sum(a, b) * sum(a, b);
+end;
+
+writeln(s);
+
+close(input);
+close(output);
+end.[/code]</div>
+</td><td valign=top><div>[code c]#include &lt;stdio.h&gt;
+
+int sum(int a, int b) {
+return a + b;
+}
+
+int main(int argc, int** argv) {
+int a;
+int b;
+int s;
+
+freopen("aplusb.in", "r", stdin);
+freopen("aplusb.out", "w", stdout);
+
+scanf("%d%d", &amp;a, &amp;b);
+
+s = 0;
+if (a &lt; 0) {
+a = -a;
+if (b &lt; 0) {
+b = -b;
+s = a + b;
+} else {
+while (s &lt;= 0) {
+switch (a) {
+case 1: 
+s = s + 3;
+break;
+case 2:
+s = s - 4;
+a = a - 1;
+break;
+default:
+s = 1;
+}
+}
+}
+} else if (b &lt; 0) {
+b = -b;
+s = (a + b) * (a - b);
+} else {
+s = sum(a, b) * sum(a, b);
+}
+
+printf("%d\n", s);
+
+fclose(stdin);
+fclose(stdout);
+}[/code]</div>
+</td>
+</tr>
+-->
+</tbody></table>
+<script language="JavaScript" type="text/javascript" src="./code.js"> </script>
+
+</body></html>

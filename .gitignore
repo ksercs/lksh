@@ -1,0 +1,8 @@
+*.o
+*.exe
+*.in
+*.out
+*.ans
+*.dat
+*.txt
+*.zip
